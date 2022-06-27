@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1724252526808802}
+  m_IsPrefabParent: 1
+--- !u!1 &1724252526808802
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4791357094899792}
+  - component: {fileID: 114189120058614066}
+  - component: {fileID: 114871903771628968}
+  - component: {fileID: 114916961041010146}
+  - component: {fileID: 114081880389822854}
+  m_Layer: 0
+  m_Name: Main System
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4791357094899792
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1724252526808802}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114081880389822854
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1724252526808802}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d07466f39f9c4d92a95e2c96804a670, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTex: {fileID: 2800000, guid: 3b9503b32875649db848d5b0c7475291, type: 3}
+--- !u!114 &114189120058614066
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1724252526808802}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927ab2aa7bd8149f8aeb95d1e38dc80e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time_out: 2
+  debugMode: 0
+--- !u!114 &114871903771628968
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1724252526808802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f5f4eb0216fe485d940065cad84c439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  current_mission:
+    random_start: 0
+    starting_point: 'Train #1 1'
+    destination: 5
+    comment: 
+--- !u!114 &114916961041010146
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1724252526808802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 533c2390c78224d2fbae48317aebbdba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playMode: 3
+  arrow: {fileID: 193084, guid: c86969d8e7e49461d9a972cafc6c1454, type: 2}
+  userArrow: {fileID: 141256, guid: f82a8a95286124938b58da046c8fce60, type: 2}
+  speedUp_For_Virtual_Path: 5

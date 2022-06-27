@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: a9ce60dc0c8b49646ab81949203eaeb6
+labels:
+- PBR
+- material
+- texture
+- wall
+- plaster
+- concrete
+- generic
+- ordinary
+- common
+- clean
+- new
+timeCreated: 1442520211
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

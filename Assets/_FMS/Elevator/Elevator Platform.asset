@@ -1,0 +1,514 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1219815696, guid: 9754d4abda502c6458053d5ed8e4fc5a, type: 3}
+  m_Name: Elevator Platform
+  m_EditorClassIdentifier: 
+  category: General
+  fsm:
+    usedInTemplate: {fileID: 11400000}
+    name: FSM
+    startState: Ready
+    states:
+    - name: Goto the level
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 234.08594
+        y: 159.25
+        width: 115
+        height: 48
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: Find Next Level
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Find Next Level
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: Reach
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Reach
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - ElevatorPlatForm_Go2Level
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 0c85f1bf
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        byteData: 46696e64204e657874204c6576656c5265616368
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 1700000017000000
+        paramName:
+        - findNextLevel
+        - reach
+        paramDataPos: 000000000f000000
+        paramByteDataSize: 0f00000005000000
+    - name: Reach
+      description: Waiting for a while 2s
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 394.7578
+        y: 154.4375
+        width: 106
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: Open
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Open
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - ElevatorPlatForm_Reach
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 26f9fa36
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        byteData: 00000040000000004f70656e
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 020000000200000017000000
+        paramName:
+        - waitingTime
+        - currentTime
+        - open
+        paramDataPos: 000000000400000008000000
+        paramByteDataSize: 040000000400000004000000
+    - name: Open
+      description: Open the door both outter and inner.
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 418.40625
+        y: 251.5
+        width: 160.5
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: Loading
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Loading
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - ElevatorPlatForm_Open
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: a6d5e3ff
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        byteData: 4c6f6164696e670000004000000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 170000000200000002000000
+        paramName:
+        - loading
+        - delayTime
+        - currentTime
+        paramDataPos: 00000000070000000b000000
+        paramByteDataSize: 070000000400000004000000
+    - name: Loading
+      description: Loading, for a while, until no one in the sensor area.
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 426.8125
+        y: 408.48438
+        width: 207.5
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: Close
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Close
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - ElevatorPlatForm_Loading
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 6db4fb80
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        byteData: 00004040436c6f7365
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 0200000017000000
+        paramName:
+        - delayTime
+        - close
+        paramDataPos: 0000000004000000
+        paramByteDataSize: 0400000005000000
+    - name: Close
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 228.875
+        y: 415.4453
+        width: 113
+        height: 48
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: Ready For Next
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Ready For Next
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: Open
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Open
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - ElevatorPlatForm_Close
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: a6d5e3ff
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        byteData: 526561647920466f72204e6578740000004000000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 170000000200000002000000
+        paramName:
+        - readyForNext
+        - delayTime
+        - currentTime
+        paramDataPos: 000000000e00000012000000
+        paramByteDataSize: 0e0000000400000004000000
+    - name: Ready For Next
+      description: Waiting for a while 2s
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 57.148438
+        y: 386.1172
+        width: 135.5
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: Find Next Level
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Find Next Level
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - ElevatorPlatForm_ReadyForNext
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 26f9fa36
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        byteData: 000000400000000046696e64204e657874204c6576656c
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 020000000200000017000000
+        paramName:
+        - waitingTime
+        - currentTime
+        - findNextLevel
+        paramDataPos: 000000000400000008000000
+        paramByteDataSize: 04000000040000000f000000
+    - name: Find Next Level
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 64.92969
+        y: 252.97656
+        width: 120
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: Go To The Level
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Goto the level
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - ElevatorPlatForm_FindNextLevel
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: c631a949
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        byteData: 476f20546f20546865204c6576656c
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 17000000
+        paramName:
+        - go2NextLevel
+        paramDataPos: 00000000
+        paramByteDataSize: 0f000000
+    - name: Ready
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 95.82031
+        y: 104.99219
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Goto the level
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.Wait
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 3708ec1a
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        byteData: 0000803f0046494e495348454400
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 0f0000001700000001000000
+        paramName:
+        - time
+        - finishEvent
+        - realTime
+        paramDataPos: 00000000050000000d000000
+        paramByteDataSize: 050000000800000001000000
+    events:
+    - name: FINISHED
+      isSystemEvent: 1
+      isGlobal: 0
+    - name: Close
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Find Next Level
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Go To The Level
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Loading
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Open
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Reach
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Ready For Next
+      isSystemEvent: 0
+      isGlobal: 0
+    globalTransitions: []
+    variables:
+      floatVariables: []
+      intVariables: []
+      boolVariables: []
+      stringVariables: []
+      vector2Variables: []
+      vector3Variables: []
+      colorVariables: []
+      rectVariables: []
+      quaternionVariables: []
+      gameObjectVariables: []
+      objectVariables: []
+      materialVariables: []
+      textureVariables: []
+    description: 
+    docUrl: 
+    showStateLabel: 1
+    maxLoopCount: 0
+    watermark: 
+    version: 0
+    ExposedEvents: []
+    RestartOnEnable: 1
+    EnableDebugFlow: 0
+    StepFrame: 0
+    activeStateName: 
